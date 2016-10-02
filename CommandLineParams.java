@@ -1,5 +1,5 @@
 /**
- * Defines the entry point
+ * Defines an entry point
  * @author Yury Suponev
  */
 public class CommandLineParams {
