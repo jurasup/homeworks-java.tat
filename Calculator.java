@@ -44,7 +44,7 @@ public class Calculator {
       System.out.println(a + "+" + b + " = " + ans);
       ans = a - b;
       System.out.println(a + "-" + b + "2 = " + ans);
-      if (Math.abs(b) < 1e-30) {
+      if (Math.abs(b) < 1e-290) {
         System.out.println(a + "/" + b + " = Infinity");
       }
       else {
