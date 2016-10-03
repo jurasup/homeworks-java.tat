@@ -6,7 +6,12 @@ import java.lang.Double;
  * @author Yury Suponev
  */  
 public class Calculator {
-	
+  /**
+   *Reads input numbers
+   *@param scanner a Scanner object that is used to read inputs
+   *@return null if there's no input double
+   *@return num input double
+   */
   public static Double scan(Scanner scanner) {
 	Double num;
     if (scanner.hasNextDouble()) {
