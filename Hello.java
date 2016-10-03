@@ -11,13 +11,11 @@ public class Hello {
    */
   public static void main(String[] args) {
     if (args.length > 1) {
-	  System.out.println("You should use only one word or use quotes. Example: \"John Johnson\"");
-	}
-	else if (args.length == 0) {
-	  System.out.println("Hello, World");
-	}
-	else {
-	  System.out.println("Hello, " + args[0]);
+	     System.out.println("You should use only one word or use quotes. Example: \"John Johnson\"");
+	}  else  if (args.length == 0) {
+	     System.out.println("Hello, World");
+	}  else {
+	     System.out.println("Hello, " + args[0]);
 	}	
   }
 }
