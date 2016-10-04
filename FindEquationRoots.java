@@ -23,7 +23,7 @@ public class FindEquationRoots {
         if (!coeff[i].isInfinite()) {
           i++;
         } else {
-        System.out.println(INVALID_INPUT);
+          System.out.println(INVALID_INPUT);
         }
       } catch (NumberFormatException e) {
         System.out.println(INVALID_INPUT);
@@ -62,8 +62,7 @@ public class FindEquationRoots {
     Double[] coefficients = new Double[3];
     scan(scanner, coefficients);
     Double[] roots = new Double[2];
-    boolean isQuadricEquation = findRoots(coefficients,roots);
-    if (isQuadricEquation) {
+    if (findRoots(coefficients,roots)) {
       if (roots[0] == null || roots[1] == null) {
         System.out.println("No real solutions.");
       } else {
