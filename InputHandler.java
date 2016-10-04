@@ -7,7 +7,8 @@ import java.util.Scanner;
 public class InputHandler {
 
   private static final int SIDES_NUMBER = 3;
-  private static final String INVALID_INPUT = "Invalid inputs. Try again using only positive numbers.";
+  private static final String INVALID_INPUT = "Invalid input. Try again using only positive numbers.";
+  private static final String ENTER_NUMBER = "You are entering the length of side #";
 
   /**
    * Reads input numbers.
@@ -18,16 +19,15 @@ public class InputHandler {
     int i = 0;
     while (i < SIDES_NUMBER) {
       try {
+        System.out.println(ENTER_NUMBER + (i + 1));
         sidesLength[i] = Double.parseDouble(scanner.next());
         if (!sidesLength[i].isInfinite() && sidesLength[i] > 0) {
           i++;
         } else {
           System.out.println(INVALID_INPUT);
-          i = 0;
         }
       } catch (NumberFormatException e) {
         System.out.println(INVALID_INPUT);
-        i = 0;
       }
     }
   }

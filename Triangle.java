@@ -86,7 +86,9 @@ public class Triangle {
       }
       return "is common.";
     }
-    else return "doesn't exist.";
+    else {
+      return "doesn't exist.";
+    }
   }
 
   /**
