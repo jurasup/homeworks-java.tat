@@ -5,6 +5,7 @@ import java.util.Scanner;
  * @author Yury Suponev
  */
 public class FindEquationRoots {
+
   private static final int COEFF_NUMBER = 3;
   private static final String INVALID_INPUT = "Invalid input, try again.";
 
@@ -34,14 +35,15 @@ public class FindEquationRoots {
    * Finds a roots of equation.
    * @param coeff Quadric equation coefficients
    * @param roots Solution (roots) of equation
-   * @return false If is not quadric equation
+   * @return false If is not quadric equation; true if it is.
    */
   private static boolean findRoots(Double[] coeff, Double[] roots) {
     double discriminant = coeff[1] * coeff[1] - 4 * coeff[0] * coeff[2];
     if (((Double)(1.0 / coeff[0])).isInfinite()) {
       System.out.println("Invalid inpit. Not a quadratic equation.");
       return false;
-    } else if (((Double)(1.0 / discriminant)).isInfinite()) {
+    }
+    if (((Double)(1.0 / discriminant)).isInfinite()) {
       roots[0] = roots[1] = new Double(-coeff[1] / (2.0 * coeff[0]));
     } else if (discriminant > 0.0) {
       roots[0] = new Double((-coeff[1] + Math.sqrt(discriminant)) / (2 * coeff[0]));
