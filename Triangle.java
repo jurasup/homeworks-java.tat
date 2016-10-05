@@ -7,9 +7,9 @@ public class Triangle {
   /**
    * The triangle sides length.
    */
-  private double firstSideLength;
-  private double secondSideLength;
-  private double thirdSideLength;
+  private Double firstSideLength;
+  private Double secondSideLength;
+  private Double thirdSideLength;
 
   /**
    * Gets length of all sides.
@@ -17,7 +17,7 @@ public class Triangle {
    * @param secondSideLength
    * @param thirdSideLength
    */
-  public Triangle(double firstSideLength, double secondSideLength, double thirdSideLength) {
+  public Triangle(Double firstSideLength, Double secondSideLength, Double thirdSideLength) {
     this.firstSideLength = firstSideLength;
     this.secondSideLength = secondSideLength;
     this.thirdSideLength = thirdSideLength;
@@ -50,7 +50,7 @@ public class Triangle {
    * @return true if triangle is equilateral; false if it os not equilateral.
    */
   private boolean isEquilateral() {
-    if (firstSideLength == secondSideLength && firstSideLength == thirdSideLength) {
+    if (firstSideLength.equals(secondSideLength) && firstSideLength.equals(thirdSideLength)) {
       return true;
     }
     return false;
@@ -60,13 +60,13 @@ public class Triangle {
    * @return true if triangle is isosceles; false if it is not isosceles.
    */
   private boolean isIsosceles() {
-    if (firstSideLength == secondSideLength) {
+    if (firstSideLength.equals(secondSideLength)) {
       return true;
     }
-    if (firstSideLength == thirdSideLength) {
+    if (firstSideLength.equals(thirdSideLength)) {
       return true;
     }
-    if (secondSideLength == thirdSideLength) {
+    if (secondSideLength.equals(thirdSideLength)) {
       return true;
     }
     return false;
