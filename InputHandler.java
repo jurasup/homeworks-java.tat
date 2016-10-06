@@ -37,7 +37,7 @@ public class InputHandler {
     Double sidesLength[] = new Double[SIDES_NUMBER];
     System.out.println("Enter the length of each triangle side (3 positive numbers):");
     scan(scanner, sidesLength);
-    Triangle triangle = new Triangle(new Double(sidesLength[0]), new Double(sidesLength[1]), new Double(sidesLength[2]));
+    Triangle triangle = new Triangle(sidesLength[0], sidesLength[1], sidesLength[2]);
     System.out.println(triangle.toString());
   }
 }
