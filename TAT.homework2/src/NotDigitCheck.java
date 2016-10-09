@@ -10,15 +10,14 @@ public class NotDigitCheck extends Check {
    * @return false if the string contains digits
    */
   @Override
-  public void checkString(String str) {
+  public boolean checkString(String str) {
     char[] chars = str.toCharArray();
     for (char c : chars) {
       if(Character.isDigit(c)) {
-        satisfied = false;
+        return false;
       }
     }
-    if (satisfied) {
-      System.out.println("...doesn't contain digits");
-    }
+    System.out.println("...doesn't contain digits");
+    return true;
   }
 }

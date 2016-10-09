@@ -6,9 +6,11 @@ public class NumberOfWordsCheck extends Check implements Splitter {
   /**
    * Check the string according the rule
    * @param str the string for check
+   * @return true if the string consists of more than five words
+   * @return false if the string consists of five or less words
    */
   @Override
-  public void checkString(String str) {
+  public boolean checkString(String str) {
     int numberOfWords = 0;
     for (String s : splitString(str)) {
      if (!s.isEmpty()) {
@@ -16,11 +18,10 @@ public class NumberOfWordsCheck extends Check implements Splitter {
      }
     }
     if (numberOfWords <= 5) {
-      satisfied = false;
+      return false;
     }
-    if (satisfied) {
-      System.out.println("...contains more than five words");
-    }
+    System.out.println("...contains more than five words");
+    return true;
   }
 
   /**

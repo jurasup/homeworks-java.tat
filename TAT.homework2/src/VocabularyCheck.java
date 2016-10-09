@@ -8,18 +8,21 @@ public class VocabularyCheck extends Check implements Splitter {
   /**
    * Check the string according the rule
    * @param str the string for check
+   * @return true if the string contains any word from vocabulary
+   * @return false if the string doesn't contain words from vocabulary
    */
   @Override
-  public void checkString(String str) {
-    satisfied = false;
+  public boolean checkString(String str) {
+    boolean contains = false;
     for (String word : vocabulary) {
       for (String s : splitString(str)) {
         if (!s.isEmpty() && s.toLowerCase().equals(word.toLowerCase())) {
           System.out.println("...contains word from vocabulary: " + word);
-          satisfied = true;
+          contains = true;
         }
       }
     }
+    return contains;
   }
 
   /**

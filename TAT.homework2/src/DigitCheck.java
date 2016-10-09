@@ -10,19 +10,16 @@ public class DigitCheck extends Check {
    * @return false if the string contains something except digits
    */
   @Override
-  public void checkString(String str) {
+  public boolean checkString(String str) {
     char[] chars = str.toCharArray();
     if (chars.length > 0) {
       for (char c : chars) {
         if (!Character.isDigit(c)) {
-          satisfied = false;
+          return false;
         }
       }
-      if (satisfied) {
-        System.out.println("...consists only of digits");
-      }
-    } else {
-      satisfied = false;
     }
+    System.out.println("...consists only of digits");
+    return true;
   }
 }
