@@ -27,6 +27,11 @@ public class StringMonitor {
    * @param args command line arguments
    */
   public static void main(String[] args) {
-
+    System.out.println("Type something");
+    Scanner scanner = new Scanner(System.in);
+    String str = scanner.nextLine();
+    str = str.trim();
+    System.out.println("Your string: " + str);
+    check(str);
   }
 }
