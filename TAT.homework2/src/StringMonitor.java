@@ -1,5 +1,8 @@
+import java.util.Scanner;
+
 /**
  * Defines an entry point for the application, which determines whether a string satisfies the rules
+ * @version 1.0
  * @author Yury Suponev
  */
 public class StringMonitor {
