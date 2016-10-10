@@ -3,6 +3,8 @@
  * @author Yury Suponev
  */
 public class NumberOfWordsCheck extends Check implements Splitter {
+  final int numberOfWordsToPass = 5;
+
   /**
    * Check the string according the rule
    * @param str the string for check
@@ -17,7 +19,7 @@ public class NumberOfWordsCheck extends Check implements Splitter {
        numberOfWords++;
      }
     }
-    if (numberOfWords <= 5) {
+    if (numberOfWords <= numberOfWordsToPass) {
       return false;
     }
     System.out.println("...contains more than five words");

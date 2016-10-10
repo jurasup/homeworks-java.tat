@@ -11,13 +11,9 @@ public class StringMonitor {
    * @param str the string for check
    */
   private static void check(String str) {
-    Check[] checks = new Check[4];
-    checks[0] = new DigitCheck();
-    checks[1] = new NotDigitCheck();
-    checks[2] = new VocabularyCheck();
-    checks[3] = new NumberOfWordsCheck();
+    CheckArray checkArray = new CheckArray();
     boolean satisfyAny = false;
-    for (Check check : checks) {
+    for (Check check : checkArray.getChecks()) {
       satisfyAny = check.checkString(str) || satisfyAny;
     }
     if (!satisfyAny) {
