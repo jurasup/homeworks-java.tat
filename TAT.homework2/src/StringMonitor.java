@@ -1,5 +1,8 @@
+import java.util.Scanner;
+
 /**
  * Defines an entry point for the application, which determines whether a string satisfies the rules
+ * @version 1.0
  * @author Yury Suponev
  */
 public class StringMonitor {
@@ -8,16 +11,12 @@ public class StringMonitor {
    * @param str the string for check
    */
   private static void check(String str) {
-    DigitCheck digitCheck = new DigitCheck();
-    NotDigitCheck notDigitCheck = new NotDigitCheck();
-    VocabularyCheck vocabularyCheck = new VocabularyCheck();
-    NumberOfWordsCheck numberOfWordsCheck = new NumberOfWordsCheck();
-    digitCheck.checkString(str);
-    notDigitCheck.checkString(str);
-    vocabularyCheck.checkString(str);
-    numberOfWordsCheck.checkString(str);
-    if (!digitCheck.isSatisfied() && !notDigitCheck.isSatisfied() && !vocabularyCheck.isSatisfied()
-        && !numberOfWordsCheck.isSatisfied()) {
+    CheckArray checkArray = new CheckArray();
+    boolean satisfyAny = false;
+    for (Check check : checkArray.getChecks()) {
+      satisfyAny = check.checkString(str) || satisfyAny;
+    }
+    if (!satisfyAny) {
       System.out.println("...doesn't satisfy any rule");
     }
   }
