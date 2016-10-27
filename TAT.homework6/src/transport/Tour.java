@@ -2,6 +2,8 @@ package transport;
 
 import route.Checkpoint;
 
+import java.util.ArrayList;
+
 /**
  * Allows to track a tour:
  * Moving to the next checkpoint;
@@ -19,7 +21,7 @@ public interface Tour {
    * Provides getting statistics (total cost and time).
    * @return statistics
    */
-  String getStatistics();
+  ArrayList<Double> getStatistics();
 
   /**
    * Provides getting name of the transport making tour.

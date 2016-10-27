@@ -1,5 +1,7 @@
 package transport;
 
+import java.util.ArrayList;
+
 /**
  * Represents type of vehicle: bus.
  * Bus can move around its route and maintain statistics.
@@ -39,12 +41,15 @@ public class Bus extends Vehicle {
 
   /**
    * Fuel price is divided between passengers in buses.
-   * @return statistics message
+   * @return statistics
    */
   @Override
-  public String getStatistics() {
-    double cost = getRoute().getDistance() / 100 * FUEL_CONSUMPTION * super.getFuelCost() / passengersNumber;
-    double time = getRoute().getDistance() / AVERAGE_SPEED;
-    return "Total price: " + cost + "   Time passed: " + time;
+  public ArrayList<Double> getStatistics() {
+    Double cost = getRoute().getDistance() / 100 * FUEL_CONSUMPTION * super.getFuelCost() / passengersNumber;
+    Double time = getRoute().getDistance() / AVERAGE_SPEED;
+    ArrayList<Double> statistics = new ArrayList<>();
+    statistics.add(cost);
+    statistics.add(time);
+    return statistics;
   }
 }

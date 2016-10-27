@@ -1,27 +1,50 @@
 package transport;
 
+import route.Checkpoint;
 import route.Route;
+
+import java.util.ArrayList;
 
 /**
  * Represents touring on foot.
  * @author Yury Suponev
  */
-public class OnFoot extends MuscleMovementWay {
+public class OnFoot implements Tour {
   private static final String NAME = "On foot";
+  /**
+   * Trip route.
+   */
+  private Route route = new Route();
   /**
    * Default average speed for moving on foot (km/h).
    */
   private static final double AVERAGE_SPEED = 5.0;
   /**
-   * Trip route.
+   * Trip cost
    */
-  private Route route = new Route();
+  private static final double COST = 0.0;
 
   /**
-   * Creates on foot moving way with default average speed.
+   * Moves to the next checkpoint.
+   * @param next checkpoint
    */
-  public OnFoot() {
-    super(AVERAGE_SPEED);
+  @Override
+  public void moveTo(Checkpoint next) {
+    route.moveTo(next);
+  }
+
+  /**
+   * Allows to get statistics (total price and time).
+   * @return statistics
+   */
+  @Override
+  public ArrayList<Double> getStatistics() {
+    Double cost = COST;
+    Double time = route.getDistance() / AVERAGE_SPEED;
+    ArrayList<Double> statistics = new ArrayList<>();
+    statistics.add(cost);
+    statistics.add(time);
+    return statistics;
   }
 
   /**

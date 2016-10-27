@@ -3,6 +3,8 @@ package transport;
 import route.Checkpoint;
 import route.Route;
 
+import java.util.ArrayList;
+
 /**
  * Represents abstract vehicle.
  * @author Yury Suponev
@@ -45,14 +47,17 @@ public abstract class Vehicle implements Tour {
   }
 
   /**
-   * Allows to get message with statistics (total price and time).
-   * @return statistic message
+   * Allows to get statistics (total price and time).
+   * @return statistics
    */
   @Override
-  public String getStatistics() {
-    double cost = route.getDistance() / 100 * fuelConsumption * FUEL_COST;
-    double time = route.getDistance() / averageSpeed;
-    return "Total price: " + cost + "   Time passed: " + time;
+  public ArrayList<Double> getStatistics() {
+    Double cost = route.getDistance() / 100 * fuelConsumption * FUEL_COST;
+    Double time = route.getDistance() / averageSpeed;
+    ArrayList<Double> statistics = new ArrayList<>();
+    statistics.add(cost);
+    statistics.add(time);
+    return statistics;
   }
 
   /**

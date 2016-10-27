@@ -1,21 +1,50 @@
 package transport;
 
+import route.Checkpoint;
+import route.Route;
+
+import java.util.ArrayList;
+
 /**
  * Represents bicycle.
  * @author Yury Suponev
  */
-public class Bicycle extends MuscleMovementWay {
+public class Bicycle implements Tour {
   private static final String NAME = "Bicycle";
+  /**
+   * Trip route.
+   */
+  private Route route = new Route();
   /**
    * Default average speed for bicycles (km/h).
    */
   private static final double AVERAGE_SPEED = 15.0;
+  /**
+   * Trip cost
+   */
+  private static final double COST = 0.0;
 
   /**
-   * Creates bicycle with default average speed.
+   * Moves bicycle to the next checkpoint.
+   * @param next checkpoint
    */
-  public Bicycle() {
-    super(AVERAGE_SPEED);
+  @Override
+  public void moveTo(Checkpoint next) {
+    route.moveTo(next);
+  }
+
+  /**
+   * Allows to get statistics (total price and time).
+   * @return statistics
+   */
+  @Override
+  public ArrayList<Double> getStatistics() {
+    Double cost = COST;
+    Double time = route.getDistance() / AVERAGE_SPEED;
+    ArrayList<Double> statistics = new ArrayList<>();
+    statistics.add(cost);
+    statistics.add(time);
+    return statistics;
   }
 
   /**
