@@ -43,7 +43,7 @@ public class Bus extends Vehicle {
    */
   @Override
   public String getStatistics() {
-    double cost = getRoute().getDistance() / 100 * FUEL_CONSUMPTION * super.getFuelCost();
+    double cost = getRoute().getDistance() / 100 * FUEL_CONSUMPTION * super.getFuelCost() / passengersNumber;
     double time = getRoute().getDistance() / AVERAGE_SPEED;
     return "Total price: " + cost + "   Time passed: " + time;
   }
