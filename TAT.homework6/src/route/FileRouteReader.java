@@ -11,7 +11,6 @@ import java.util.Scanner;
  * @author Yury Suponev
  */
 public class FileRouteReader extends RouteReader {
-  private final String INVALID_COORDINATES = "Error: Invalid checkpoint coordinates!";
   private final String EMPTY_FILE = "Error: File is empty!";
   private final String CLOSED_ROUTE = "Error: Can't move around closed route.";
   private final String FILE_TO_READ;
@@ -38,9 +37,7 @@ public class FileRouteReader extends RouteReader {
     while (scanner.hasNext()) {
       String line = scanner.nextLine();
       String[] coordinates = line.split(" ");
-      if (!validator.validate(line)) {
-        throw new Exception(INVALID_COORDINATES);
-      }
+      validator.validate(line);
       Checkpoint checkpoint = new Checkpoint(Double.parseDouble(coordinates[0]),
                                              Double.parseDouble(coordinates[1]));
       route.add(checkpoint);
