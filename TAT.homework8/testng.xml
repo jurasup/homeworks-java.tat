@@ -1,0 +1,57 @@
+<suite name="TransportTests">
+    <test name="CarTest" preserve-order="true" >
+        <classes>
+            <class name="transport.CarTest">
+                <methods>
+                    <include name="all"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="BusTest" preserve-order="true" >
+        <classes>
+            <class name="transport.BusTest">
+                <methods>
+                    <include name="all"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="BicycleTest" preserve-order="true" >
+        <classes>
+            <class name="transport.BicycleTest">
+                <methods>
+                    <include name="all"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="OnFootTest" preserve-order="true" >
+        <classes>
+            <class name="transport.OnFootTest">
+                <methods>
+                    <include name="all"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RouteTests" preserve-order="true" >
+        <classes>
+            <class name="route.CheckpointTest">
+                <methods>
+                    <include name="all"/>
+                </methods>
+            </class>
+            <class name="route.CheckpointValidatorTest">
+                <methods>
+                    <include name="all"/>
+                </methods>
+            </class>
+            <class name="route.RouteTest">
+                <methods>
+                    <include name="all"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
