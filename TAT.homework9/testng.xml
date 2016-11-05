@@ -1,0 +1,11 @@
+<suite name="TriangleTests">
+    <test name="Test" preserve-order="true" >
+        <classes>
+            <class name="TriangleTest">
+                <methods>
+                    <include name="all"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
