@@ -1,3 +1,5 @@
+import exception.NumberException;
+
 import java.math.BigDecimal;
 
 /**
@@ -23,6 +25,7 @@ public class Triangle {
    * @param firstSideLength
    * @param secondSideLength
    * @param thirdSideLength
+   * @throws Exception if triangle sides are invalid
    */
   public Triangle(double firstSideLength, double secondSideLength, double thirdSideLength) throws Exception {
     validateSideLength(firstSideLength);
@@ -37,11 +40,18 @@ public class Triangle {
   /**
    * Validates length of the input triangle side.
    * @param sideLength length of the side
-   * @throws Exception if side is invalid
+   * @throws NumberException if side is invalid
    */
-  private void validateSideLength(double sideLength) throws Exception {
-    if (sideLength <= 0.0 || Double.isInfinite(sideLength) || Double.isNaN(sideLength)) {
+  private void validateSideLength(double sideLength) throws NumberException {
+    /*if (sideLength <= 0.0 || Double.isInfinite(sideLength) || Double.isNaN(sideLength)) {
       throw new Exception(INVALID_SIDE_LENGTH);
+    }*/
+    if (sideLength <= 0.0) {
+      throw new NumberException(NumberException.NEGATIVE_NUMBER_CODE);
+    } else if(Double.isInfinite(sideLength)) {
+      throw new NumberException(NumberException.INFINITE_NUMBER_CODE);
+    } else if (Double.isNaN(sideLength)) {
+      throw new NumberException(NumberException.NAN_CODE);
     }
   }
 
