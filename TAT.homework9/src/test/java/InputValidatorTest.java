@@ -1,6 +1,4 @@
 import exception.NumberException;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -10,44 +8,19 @@ import org.testng.annotations.Test;
  * @author Yury Suponev
  */
 public class InputValidatorTest {
+  private final String invalidInputTag = "invalid_input";
+  private final String input = "input_string";
   private InputValidator validator = new InputValidator();
 
-  @BeforeMethod
-  public void setUp() throws Exception {
-
-  }
-
-  @AfterMethod
-  public void tearDown() throws Exception {
-
-  }
-
-  @DataProvider(name = "invalid input string")
+  @DataProvider(name = "invalid input")
   public Object[][] invalidInputString() throws Exception {
-    return new Object[][]{
-            {"1,0"},
-            {"a"},
-            {"1.0 1.0"},
-            {"1.0 a"}
-    };
+    ValueReader reader = ValueReader.getReader();
+    String[] attributes = {input};
+    return reader.getNodeValuesByTagWithAttributes(invalidInputTag, attributes);
   }
 
-  @DataProvider(name = "invalid number")
-  public Object[][] invalidInputStringIncorrectNumbers() throws Exception {
-    return new Object[][]{
-            {"-1.0"},
-            {"Infinity"},
-            {"NaN"}
-    };
-  }
-
-  @Test(dataProvider = "invalid input string", expectedExceptions = NumberFormatException.class)
-  public void negativeValidateInvalidInputString(String input) throws NumberException, NumberFormatException {
-    validator.validate(input);
-  }
-
-  @Test(dataProvider = "invalid number", expectedExceptions = NumberException.class)
-  public void negativeValidateInvalidNumbers(String input) throws NumberFormatException, NumberException {
+  @Test(dataProvider = "invalid input", expectedExceptions = Exception.class)
+  public void negativeValidateInvalidInputString(String input) throws NumberFormatException, NumberException {
     validator.validate(input);
   }
 }
