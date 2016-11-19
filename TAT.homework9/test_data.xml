@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+    <validator-test>
+        <invalid_input input_string="1,0" />
+        <invalid_input input_string="a" />
+        <invalid_input input_string="1.0 a" />
+        <invalid_input input_string="1.0 1.0" />
+        <invalid_input input_string="-1.0" />
+        <invalid_input input_string="NaN" />
+        <invalid_input input_string="Infinity" />
+    </validator-test>
+    <triangle-test>
+        <invalid_triangle first_side="0.0" second_side="0.0" third_side="0.0" />
+        <invalid_triangle first_side="0.0" second_side="1.0" third_side="1.0" />
+        <invalid_triangle first_side="1.0" second_side="0.0" third_side="1.0" />
+        <invalid_triangle first_side="1.0" second_side="1.0" third_side="0.0" />
+        <invalid_triangle first_side="1.0" second_side="1.0" third_side="3.0" />
+        <invalid_triangle first_side="1.0" second_side="3.0" third_side="1.0" />
+        <invalid_triangle first_side="3.0" second_side="1.0" third_side="1.0" />
+        <invalid_triangle first_side="Infinity" second_side="Infinity" third_side="Infinity" />
+        <invalid_triangle first_side="Infinity" second_side="1.0" third_side="1.0" />
+        <invalid_triangle first_side="1.0" second_side="Infinity" third_side="1.0" />
+        <invalid_triangle first_side="1.0" second_side="1.0" third_side="Infinity" />
+        <invalid_triangle first_side="NaN" second_side="NaN" third_side="NaN" />
+        <invalid_triangle first_side="NaN" second_side="1.0" third_side="1.0" />
+        <invalid_triangle first_side="1.0" second_side="NaN" third_side="1.0" />
+        <invalid_triangle first_side="1.0" second_side="1.0" third_side="NaN" />
+        <invalid_triangle first_side="-MAX_VALUE" second_side="-MAX_VALUE" third_side="-MAX_VALUE" />
+        <invalid_triangle first_side="-MAX_VALUE" second_side="1.0" third_side="1.0" />
+        <invalid_triangle first_side="1.0" second_side="-MAX_VALUE" third_side="1.0" />
+        <invalid_triangle first_side="1.0" second_side="1.0" third_side="-MAX_VALUE" />
+        <invalid_triangle first_side="-MIN_VALUE" second_side="-MIN_VALUE" third_side="-MIN_VALUE" />
+        <invalid_triangle first_side="-MIN_VALUE" second_side="1.0" third_side="1.0" />
+        <invalid_triangle first_side="1.0" second_side="-MIN_VALUE" third_side="1.0" />
+        <invalid_triangle first_side="1.0" second_side="1.0" third_side="-MIN_VALUE" />
+        <invalid_triangle first_side="-1.0" second_side="-1.0" third_side="-1.0" />
+        <invalid_triangle first_side="-1.0" second_side="1.0" third_side="1.0" />
+        <invalid_triangle first_side="1.0" second_side="-1.0" third_side="1.0" />
+        <invalid_triangle first_side="1.0" second_side="1.0" third_side="-1.0" />
+        <valid_triangle first_side="1.0" second_side="1.5" third_side="2.0" type="common" />
+        <valid_triangle first_side="2.0" second_side="2.0" third_side="1.0" type="isosceles" />
+        <valid_triangle first_side="1.0" second_side="1.0" third_side="1.0" type="equilateral" />
+        <valid_triangle first_side="MAX_VALUE" second_side="MAX_VALUE" third_side="MAX_VALUE" type="equilateral" />
+        <valid_triangle first_side="MAX_VALUE" second_side="MAX_VALUE" third_side="1.0" type="isosceles" />
+        <valid_triangle first_side="MAX_VALUE" second_side="1.0" third_side="MAX_VALUE" type="isosceles" />
+        <valid_triangle first_side="1.0" second_side="MAX_VALUE" third_side="MAX_VALUE" type="isosceles" />
+        <valid_triangle first_side="MIN_VALUE" second_side="MIN_VALUE" third_side="MIN_VALUE" type="equilateral" />
+        <valid_triangle first_side="MIN_VALUE" second_side="1.0" third_side="1.0" type="isosceles" />
+        <valid_triangle first_side="1.0" second_side="MIN_VALUE" third_side="1.0" type="isosceles" />
+        <valid_triangle first_side="1.0" second_side="1.0" third_side="MIN_VALUE" type="isosceles" />
+    </triangle-test>
+</test-data>
