@@ -1,0 +1,12 @@
+{
+  "commands": [
+    {
+      "name": "open",
+      "parameters": ["http://www.tut.by", "3000"]
+    },
+    {
+      "name": "checkPageTitle",
+      "parameters": ["Google:]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+open "http://www.byfly.by" "3000"
+checkLinkPresentByHref "intro"
+checkLinkPresentByName "intro"
+checkPageTitle "ByFly"
+checkPageContains "byfly"
