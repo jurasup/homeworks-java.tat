@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commands>
+  <command name="open">
+    <param>http://www.tut.by</param>
+    <param>3000</param>
+  </command>
+  <command name="checkLinkPresentByName">
+    <param>tut</param>
+  </command>
+</commands>
